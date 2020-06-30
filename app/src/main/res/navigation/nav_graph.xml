@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.sukodu.ui.home.HomeFragment"
+        android:label="home_fragment"
+        tools:layout="@layout/home_fragment" >
+        <action
+            android:id="@+id/action_homeFragment_to_playBoardFragment"
+            app:destination="@id/playBoardFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/playBoardFragment"
+        android:name="com.example.sukodu.ui.playboard.PlayBoardFragment"
+        android:label="play_board_fragment"
+        tools:layout="@layout/play_board_fragment" >
+        <argument
+            android:name="cells"
+            app:argType="com.example.sukodu.model.Cell[]" />
+    </fragment>
+</navigation>

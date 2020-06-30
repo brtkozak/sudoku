@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Sukodu</string>
+    <string name="select_level">Select the level of difficulty</string>
+    <string name="easy">Easy</string>
+    <string name="medium">Medium</string>
+    <string name="hard">Hard</string>
+    <string name="cannot_load_play_board">Cannot load play board</string>
+    <string name="clear_cell">Clear</string>
+    <string name="live_validation">Live validation</string>
+    <string name="check_result">Check result</string>
+    <string name="fill_all_cells">Fill in all cells</string>
+    <string name="incorrect_solution">Your solution is incorrect</string>
+    <string name="reset">Reset</string>
+    <string name="win">You won!</string>
+</resources>

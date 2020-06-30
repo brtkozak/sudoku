@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ui.home.HomeFragment">
+
+    <data>
+        <variable name="viewModel" type="com.example.sukodu.ui.home.HomeViewModel" />
+        <import type="com.example.sukodu.repository.Difficulty"/>
+        <import type="android.view.View"/>
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/boardSolvedText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@id/select_level"
+            android:layout_marginBottom="@dimen/space_big"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:textSize="@dimen/text_big"
+            android:visibility="gone"
+            android:text="@string/win"/>
+
+        <TextView
+            android:id="@+id/select_level"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_big"
+            android:text="@string/select_level"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.35"
+            android:textSize="@dimen/text_regular"/>
+
+        <Button
+            android:id="@+id/easy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_big"
+            android:text="@string/easy"
+            app:layout_constraintEnd_toStartOf="@+id/medium"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/select_level"
+            android:onClick="@{() -> viewModel.onLevelSelect(Difficulty.EASY)}"/>
+
+        <Button
+            android:id="@+id/medium"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:text="@string/medium"
+            app:layout_constraintEnd_toStartOf="@+id/hard"
+            app:layout_constraintStart_toEndOf="@+id/easy"
+            app:layout_constraintTop_toTopOf="@id/easy"
+            android:onClick="@{() -> viewModel.onLevelSelect(Difficulty.MEDIUM)}"/>
+
+        <Button
+            android:id="@+id/hard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/hard"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/medium"
+            app:layout_constraintTop_toTopOf="@id/easy"
+            android:onClick="@{() -> viewModel.onLevelSelect(Difficulty.HARD)}"/>
+
+        <ProgressBar
+            android:id="@+id/progress_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/medium"
+            android:layout_marginTop="@dimen/space_big"
+            android:visibility="@{viewModel.inProgress ? View.VISIBLE : View.GONE}" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

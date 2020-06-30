@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="space_big">30dp</dimen>
+    <dimen name="space_regular">16dp</dimen>
+    <dimen name="space_small">8dp</dimen>
+
+    <dimen name="text_small">16sp</dimen>
+    <dimen name="text_regular">24sp</dimen>
+    <dimen name="text_big">36sp</dimen>
+
+    <dimen name="border_small">0.5dp</dimen>
+    <dimen name="border_regular">2dp</dimen>
+    <dimen name="border_big">4dp</dimen>
+
+    <dimen name="radius_regular">6dp</dimen>
+
+</resources>

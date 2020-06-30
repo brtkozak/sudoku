@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#AEBCFD</color>
+    <color name="colorPrimaryDark">#426191</color>
+    <color name="colorAccent">#426191</color>
+    <color name="borderLight">#979797</color>
+    <color name="borderDark">#000000</color>
+    <color name="cellText">#979797</color>
+    <color name="colorSecondary">#BADADFFC</color>
+    <color name="colorSecondaryDark">#9997A6FF</color>
+    <color name="error">#FF7272</color>
+
+
+</resources>
