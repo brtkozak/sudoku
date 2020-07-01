@@ -12,49 +12,32 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:padding="@dimen/space_regular">
 
         <GridView
             android:id="@+id/board"
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/space_regular"
             android:background="@drawable/playboard_border"
             android:padding="@dimen/border_regular"
-            app:layout_constraintEnd_toEndOf="@id/right_guideline"
-            app:layout_constraintStart_toStartOf="@id/left_guideline"
             app:layout_constraintTop_toTopOf="parent" />
 
         <GridView
             android:id="@+id/numbers"
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:layout_constraintTop_toBottomOf="@id/board"
             android:layout_marginTop="@dimen/space_big"
-            app:layout_constraintStart_toStartOf="@id/left_guideline"
-            app:layout_constraintEnd_toEndOf="@id/right_guideline"
             android:horizontalSpacing="@dimen/space_small"/>
-
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/left_guideline"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            app:layout_constraintGuide_begin="@dimen/space_regular" />
-
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/right_guideline"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            app:layout_constraintGuide_end="@dimen/space_regular" />
 
         <Button
             android:id="@+id/clear_cell"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/clear_cell"
-            app:layout_constraintStart_toStartOf="@id/left_guideline"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/numbers"
             android:layout_marginTop="@dimen/space_small"
             android:onClick="@{() -> viewModel.clearCurrentSelectedValue()}"/>
@@ -73,7 +56,7 @@
             android:id="@+id/live_validation"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintStart_toStartOf="@id/left_guideline"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/clear_cell"
             android:layout_marginTop="@dimen/space_small"
             android:text="@string/live_validation"
@@ -84,7 +67,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/check_result"
-            app:layout_constraintStart_toStartOf="@id/left_guideline"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/live_validation"
             android:layout_marginTop="@dimen/space_small"
             android:onClick="@{() -> viewModel.checkResult()}"/>

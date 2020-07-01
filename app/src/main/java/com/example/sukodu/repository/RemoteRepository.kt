@@ -11,8 +11,8 @@ class RemoteRepository : KoinComponent{
 
     private val api : SudokuApi = SudokuApi()
 
-    fun getBoard(difficulty : String) : Single<List<Cell>> {
-        return api.getBoard(difficulty)
+    fun getBoard(difficulty : Difficulty) : Single<List<Cell>> {
+        return api.getBoard(difficulty.requestParam)
             .subscribeOn(Schedulers.io())
             .map { SudokuConverter.convertBoardToCells(it) }
     }

@@ -45,8 +45,8 @@ class PlayBoardViewModel : ViewModel(), KoinComponent {
     var liveValidationEnabled = false
         set(value) {
             field = value
-            forceUiRefresh()
             validateBoard()
+            forceUiRefresh()
         }
 
     /**

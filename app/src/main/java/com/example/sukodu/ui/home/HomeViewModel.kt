@@ -18,7 +18,7 @@ import kotlinx.android.synthetic.main.home_fragment.view.*
 
 class HomeViewModel(private val remoteRepository: RemoteRepository) : ViewModel() {
 
-    private var disposables: CompositeDisposable = CompositeDisposable()
+    private val disposables: CompositeDisposable = CompositeDisposable()
 
     /**
      * [inProgress] state of [Boolean]
@@ -39,7 +39,7 @@ class HomeViewModel(private val remoteRepository: RemoteRepository) : ViewModel(
     val message : LiveData<Int> = MutableLiveData<Int>()
 
     fun onLevelSelect(difficulty: Difficulty){
-        disposables.add(remoteRepository.getBoard(difficulty.requestParam)
+        disposables.add(remoteRepository.getBoard(difficulty)
             .observeOn(AndroidSchedulers.mainThread())
             .doOnSubscribe { inProgress.asMutable().value = true }
             .doAfterTerminate { inProgress.asMutable().value = false }

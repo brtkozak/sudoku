@@ -44,9 +44,10 @@ class HomeFragment : Fragment() {
 
     private fun initObservers() {
         viewModel.cells.observe(viewLifecycleOwner, Observer {
-            if(it != null)
+            if(it != null && it.isNotEmpty()) {
                 openPlayBoard(it)
-            viewModel.setCells(null)
+                viewModel.setCells(null)
+            }
         })
 
         viewModel.message.observe(viewLifecycleOwner, Observer {
